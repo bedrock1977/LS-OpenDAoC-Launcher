@@ -1,0 +1,29 @@
+2024-06-03 22:08:32.459 -07:00 [INF] Initializing settings
+2024-06-03 22:08:32.637 -07:00 [ERR] Error initializing app
+System.Configuration.ConfigurationErrorsException: Configuration system failed to initialize ---> System.Configuration.ConfigurationErrorsException: Unrecognized configuration section userSettings. (C:\Users\ricky\AppData\Local\AtlasFreeshard\LastStandLauncher.exe_Url_ov2azlsu3b0mcn5awgvundvn243agyfb\1.0.7.0\user.config line 3)
+   at System.Configuration.ConfigurationSchemaErrors.ThrowIfErrors(Boolean ignoreLocal)
+   at System.Configuration.BaseConfigurationRecord.ThrowIfParseErrors(ConfigurationSchemaErrors schemaErrors)
+   at System.Configuration.BaseConfigurationRecord.ThrowIfInitErrors()
+   at System.Configuration.ClientConfigurationSystem.OnConfigRemoved(Object sender, InternalConfigEventArgs e)
+   --- End of inner exception stack trace ---
+   at System.Configuration.ClientConfigurationSystem.OnConfigRemoved(Object sender, InternalConfigEventArgs e)
+   at System.Configuration.Internal.InternalConfigRoot.OnConfigRemoved(InternalConfigEventArgs e)
+   at System.Configuration.Internal.InternalConfigRoot.RemoveConfigImpl(String configPath, BaseConfigurationRecord configRecord)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ClientConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String sectionName)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at System.Configuration.ClientSettingsStore.ReadSettings(String sectionName, Boolean isUserScoped)
+   at System.Configuration.LocalFileSettingsProvider.GetPropertyValues(SettingsContext context, SettingsPropertyCollection properties)
+   at System.Configuration.SettingsBase.GetPropertiesFromProvider(SettingsProvider provider)
+   at System.Configuration.SettingsBase.GetPropertyValueByName(String propertyName)
+   at System.Configuration.SettingsBase.get_Item(String propertyName)
+   at System.Configuration.ApplicationSettingsBase.GetPropertyValue(String propertyName)
+   at System.Configuration.ApplicationSettingsBase.get_Item(String propertyName)
+   at WPFLauncher.Properties.Settings.get_Username() in D:\Code_Projects\LastStand\LS-OpenDAoC-Launcher\WPFLauncher\Properties\Settings.Designer.cs:line 43
+   at WPFLauncher.MainWindow.InitializeSettings() in D:\Code_Projects\LastStand\LS-OpenDAoC-Launcher\WPFLauncher\MainWindow.xaml.cs:line 84
+   at WPFLauncher.MainWindow..ctor() in D:\Code_Projects\LastStand\LS-OpenDAoC-Launcher\WPFLauncher\MainWindow.xaml.cs:line 67
+2024-06-03 22:23:35.043 -07:00 [INF] Initializing settings
+2024-06-03 22:35:55.876 -07:00 [INF] Initializing settings
+2024-06-03 22:39:41.835 -07:00 [INF] Initializing settings
+2024-06-03 22:42:05.653 -07:00 [INF] Initializing settings

@@ -81,10 +81,14 @@ namespace WPFLauncher
             log.Information("Initializing settings");
 
             ShowInTaskbar = true;
-            LauncherWindow.Title = "Atlas Launcher v" + Constants.LauncherVersion;
+            LauncherWindow.Title = "Last Stand Launcher v" + Constants.LauncherVersion;
             if (Settings.Default.Username != "") UsernameBox.Text = Settings.Default.Username;
             if (Settings.Default.Password != "") PasswordBox.Password = Settings.Default.Password;
             if (Settings.Default.QuickCharacter != "") QuickloginCombo.Text = Settings.Default.QuickCharacter;
+            if (Settings.Default.GameFolder != "") lblGamePath.Content = Settings.Default.GameFolder;
+
+            // Added lblGamePath details
+            //lblGamePath.Content = Constants.UserPath;
 
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -92,7 +96,7 @@ namespace WPFLauncher
 
         private void InitializeLogger()
         {
-            log = new LoggerConfiguration().WriteTo.File("logs/AtlasLauncher-.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+            log = new LoggerConfiguration().WriteTo.File("logs/LastStandLauncher-.txt", rollingInterval: RollingInterval.Day).CreateLogger();
         }
 
         private async Task CheckVersion()
@@ -146,7 +150,7 @@ namespace WPFLauncher
             
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync($"https://api.atlasfreeshard.com/utils/discordstatus/{accountName}");
+                var response = await httpClient.GetAsync($"https://api.laststand.net/utils/discordstatus/{accountName}");
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -161,7 +165,7 @@ namespace WPFLauncher
         {
             try
             {
-                var webRequest = WebRequest.Create("https://api.atlasfreeshard.com/utils/discordrequired") as HttpWebRequest;
+                var webRequest = WebRequest.Create("https://api.laststand.net/utils/discordrequired") as HttpWebRequest;
 
                 webRequest.ContentType = "application/json";
                 webRequest.UserAgent = "Nothing";
@@ -244,7 +248,7 @@ namespace WPFLauncher
                     try
                     {
                         var data = await _httpClient.GetByteArrayAsync(Constants.RemoteFilePath + file.FileName);
-                        if (file.FileName.Contains("AtlasLauncher")) updateSelf = true;
+                        if (file.FileName.Contains("LastStandLauncher")) updateSelf = true;
                         new FileInfo(file.FileName).Directory?.Create();
                         File.WriteAllBytes(file.FileName, data);
 
@@ -341,17 +345,17 @@ namespace WPFLauncher
         {
             var self = Assembly.GetExecutingAssembly().Location;
 
-            using (var batFile = new StreamWriter(File.Create("AtlasLauncherUpdate.bat")))
+            using (var batFile = new StreamWriter(File.Create("LSLauncherUpdate.bat")))
             {
                 batFile.WriteLine("@ECHO OFF");
                 batFile.WriteLine("TIMEOUT /t 1 /nobreak > NUL");
-                batFile.WriteLine("TASKKILL /IM \"{0}\" > NUL", "AtlasLauncher.exe");
-                batFile.WriteLine("MOVE \"{0}\" \"{1}\"", Constants.LauncherUpdaterName, "AtlasLauncher.exe");
+                batFile.WriteLine("TASKKILL /IM \"{0}\" > NUL", "LastStandLauncher.exe");
+                batFile.WriteLine("MOVE \"{0}\" \"{1}\"", Constants.LauncherUpdaterName, "LastStandLauncher.exe");
                 batFile.WriteLine("DEL \"{0}\"", Constants.LauncherUpdaterName);
                 batFile.WriteLine("DEL \"%~f0\" & START \"\" /B \"{0}\"", self);
             }
 
-            var startInfo = new ProcessStartInfo("AtlasLauncherUpdate.bat");
+            var startInfo = new ProcessStartInfo("LSLauncherUpdate.bat");
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = false;
             Process.Start(startInfo);
@@ -529,6 +533,7 @@ namespace WPFLauncher
 
         private void BuildBat()
         {
+            log.Information("Starting BuildBat");
             var quick = QuickloginCombo.Text;
             var quickSelection = "";
             var serverIP = "";
@@ -558,8 +563,9 @@ namespace WPFLauncher
 
             serverIP = Settings.Default.PTR ? Constants.PtrIP : Constants.LiveIP;
 
-            var command = "connect.exe game1127.dll " + serverIP + " " + UsernameBox.Text + " " + PasswordBox.Password +
+            var command = Settings.Default.GameFolder + "connect.exe game1127.dll " + serverIP + " " + UsernameBox.Text + " " + PasswordBox.Password +
                           " " + quickSelection;
+            log.Information("Starting with command: " + command);
             StartAtlas(command);
             PlayButton.Content = "Play";
             EnableAccountCredentials(true);
@@ -579,7 +585,9 @@ namespace WPFLauncher
 
         private void GetQuickCharacters()
         {
-            var path = Environment.ExpandEnvironmentVariables(Constants.AppData) + Constants.UserPath;
+            // var path = Environment.ExpandEnvironmentVariables(Constants.AppData) + Constants.UserPath;
+            //var path = Constants.UserPath;
+            var path = Settings.Default.GameFolder;
             if (!File.Exists(path)) return;
 
             var userDat = File.ReadAllLines(path);
@@ -623,7 +631,7 @@ namespace WPFLauncher
         {
             try
             {
-                var webRequest = WebRequest.Create("https://api.atlasfreeshard.com/stats") as HttpWebRequest;
+                var webRequest = WebRequest.Create("https://api.laststand.net/stats") as HttpWebRequest;
 
                 if (webRequest == null) return;
                 webRequest.ContentType = "application/json";
@@ -718,6 +726,11 @@ namespace WPFLauncher
         {
             WindowState = WindowState.Normal;
             Show();
+        }
+
+        private void QuickloginCombo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
         }
     }
 

@@ -2,18 +2,19 @@
 {
     internal class Constants
     {
-        public const string LauncherVersion = "1.0.7";
+        public const string LauncherVersion = "1.0.0";
 
         #region Patcher
 
-        public const string LauncherUpdaterName = "AtlasLauncher_Update.exe";
-        public const string AppData = @"%AppData%\";
-        public const string UserPath = "\\Electronic Arts\\Dark Age of Camelot\\Atlas\\user.dat";
-        
+        public const string LauncherUpdaterName = "LastStandLauncher_Update.exe";
+        // public const string AppData = "D:\\Program Files (x86)"; // @"%AppData%\" "D:\\Program Files (x86)"
+        // public const string UserPath = "\\Electronic Arts\\LastStand\\user.dat";
+        public const string UserPath = "D:\\Program Files (x86)\\Electronic Arts\\LastStand\\user.dat";
+
         public const string
-            RemoteVersionUrl = "https://patch.atlasfreeshard.com/version-new.txt";
+            RemoteVersionUrl = "https://patch.laststand.net/version-new.txt"; // "https://patch.atlasfreeshard.com/version-new.txt"
         public const string
-            RemoteFileList = "https://patch.atlasfreeshard.com/patchlist-new.txt"; 
+            RemoteFileList = "https://patch.laststand.net/patchlist-new.txt"; // "https://patch.atlasfreeshard.com/patchlist-new.txt"
         
         public static string RemoteFilePath;
 
@@ -21,9 +22,9 @@
 
         #region gameserver
 
-        public const string LiveIP = "play.atlasfreeshard.com";
-        public const string PtrIP = "ptr.atlasfreeshard.com";
-        public const string QueueApiIP = "https://queue.atlasfreeshard.com";
+        public const string LiveIP = "livelaststand.ddns.net";   // "play.atlasfreeshard.com"; "192.168.0.104"
+        public const string PtrIP = "ptr.livelaststand.ddns.net";    // "ptr.atlasfreeshard.com"; "192.168.0.11"
+        public const string QueueApiIP = "https://queue.laststand.net";
 
         #endregion
 

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="Atlas Launcher" Height="300" Width="500" ResizeMode="CanMinimize" WindowStyle="SingleBorderWindow"
+        Title="Last Stand Launcher" Height="325" Width="580" ResizeMode="CanMinimize" WindowStyle="SingleBorderWindow"
         HorizontalAlignment="Stretch" Icon="/img/icon.ico">
 
 
-    <Grid MouseDown="GridBread_MouseDown" Margin="-1,0,0,-12">
+    <Grid MouseDown="GridBread_MouseDown" Margin="-1,0,0,-1">
 
         <Grid.Background>
             <ImageBrush ImageSource="/img/home-bg.png" Stretch="UniformToFill" />
@@ -45,14 +45,13 @@
                 Foreground="LightGray" BorderBrush="Gray" TextBlock.FontSize="10" Click="PatchButton_PreviewMouseDown" />
         <TextBox x:Name="UsernameBox" Grid.Column="5" Grid.Row="1" TextWrapping="Wrap" Foreground="White"
                  CaretBrush="White" TextBlock.FontSize="12"  TextAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="24"/>
-        <Label x:Name="UsernameLabel" Grid.Column="4" Grid.Row="1" Content="Account" Foreground="White"
-                TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="54" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="24" Grid.ColumnSpan="2" Margin="0,0,183,0" />
+        <Label x:Name="UsernameLabel" Grid.Column="4" Grid.Row="1" Content="Account:" Foreground="White"
+                TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="67" VerticalAlignment="Center" Height="24" Grid.ColumnSpan="2" Margin="83,0,0,0" IsEnabled="False" HorizontalAlignment="Left" />
         <PasswordBox x:Name="PasswordBox" Grid.Column="5" Grid.Row="2" Foreground="White" CaretBrush="White"
                      Width="140" TextBlock.FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24"/>
-        <Label x:Name="PasswordLabel" Grid.Column="4" Grid.Row="2" Content="Password" Foreground="White"
-                TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="61" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="24" Grid.ColumnSpan="2" Margin="0,0,183,0" />
-        <ComboBox x:Name="QuickloginCombo" Grid.Column="5" Grid.Row="3" Foreground="White" Height="26" Width="140"
-                  HorizontalAlignment="Center" TextBlock.FontSize="12">
+        <Label x:Name="PasswordLabel" Grid.Column="4" Grid.Row="2" Content="Password:" Foreground="White"
+                TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="67" VerticalAlignment="Bottom" Height="24" Grid.ColumnSpan="2" Margin="0,0,183,0" HorizontalAlignment="Right" />
+        <ComboBox x:Name="QuickloginCombo" Grid.Column="5" Grid.Row="3" Foreground="White" Height="26" TextBlock.FontSize="12" Margin="55,0,55,0" SelectionChanged="QuickloginCombo_SelectionChanged">
             <ComboBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ComboBoxItem}">
                     <Setter Property="Foreground" Value="Black" />
@@ -62,22 +61,22 @@
                 </Style>
             </ComboBox.ItemContainerStyle>
         </ComboBox>
-        <Label x:Name="QuickloginLabel" Grid.Column="4" Grid.Row="3" Content="Character" Foreground="White" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="62" Height="24" Grid.ColumnSpan="2" Margin="0,0,183,0" />
+        <Label x:Name="QuickloginLabel" Grid.Column="4" Grid.Row="3" Content="Character:" Foreground="White" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="24" Grid.ColumnSpan="2" Margin="0,0,183,0" />
         <Image x:Name="AlbIcon" Grid.Row="6" Grid.Column="1" Source="/img/alb.png"
-               Stretch="Uniform"/>
-        <Label x:Name="AlbLabel" Grid.Row="8" Grid.Column="1" Width="40"
+               Stretch="Uniform" Margin="0,11,0,39" Grid.RowSpan="2"/>
+        <Label x:Name="AlbLabel" Grid.Row="7" Grid.Column="1" Width="40"
                HorizontalContentAlignment="Center" Content="N/A" Foreground="Red"
-               HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Height="24" />
+               HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Height="24" Margin="0,11,0,0" />
         <Image x:Name="MidIcon" Grid.Row="6" Grid.Column="1"
-               Source="/img/mid.png" Stretch="Uniform" Grid.ColumnSpan="3" Margin="73,0,73,0" />
-        <Label x:Name="MidLabel" Grid.Row="8" Grid.Column="2" Width="40"
+               Source="/img/mid.png" Stretch="Uniform" Grid.ColumnSpan="3" Margin="73,11,73,39" Grid.RowSpan="2" />
+        <Label x:Name="MidLabel" Grid.Row="7" Grid.Column="2" Width="40"
                HorizontalContentAlignment="Center" Content="N/A" Foreground="DodgerBlue"
-               VerticalAlignment="Top" HorizontalAlignment="Center" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Height="24" />
+               VerticalAlignment="Top" HorizontalAlignment="Center" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Height="24" Margin="0,11,0,0" />
         <Image x:Name="HibIcon" Grid.Row="6" Grid.Column="3"
-               Source="/img/hib.png" Stretch="Uniform" Grid.ColumnSpan="2" Margin="0,0,98,0" />
-        <Label x:Name="HibLabel" Grid.Row="8" Grid.Column="3" Width="40"
+               Source="/img/hib.png" Stretch="Uniform" Grid.ColumnSpan="2" Margin="0,11,98,39" Grid.RowSpan="2" />
+        <Label x:Name="HibLabel" Grid.Row="7" Grid.Column="3" Width="40"
                HorizontalContentAlignment="Center" Content="N/A" Foreground="LimeGreen"
-               HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Height="24" />
+               HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Height="24" Margin="0,11,0,0" />
         <Button x:Name="PlayButton" Grid.Column="5" Grid.Row="6" Content="Play" HorizontalAlignment="Center" VerticalAlignment="Center"
                 TextBlock.FontSize="18" TextBlock.FontWeight="bold"
                 Width="140" Click="PlayButton_Click" ClickMode="Release"
@@ -101,8 +100,22 @@
         </Button>
         <tb:TaskbarIcon
             IconSource="/img/icon.ico"
-            ToolTipText="Atlas Launcher" 
+            ToolTipText="Last Stand Launcher" 
             TrayLeftMouseDown="TaskbarIcon_OnTrayLeftMouseDown" Grid.ColumnSpan="2" Margin="4,8,55,25" />
+        <Label x:Name="lblGamePath" Grid.Column="1" Grid.Row="7" Content="path goes here&#xA;" Foreground="White"
+            TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="447" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Margin="0,0,49,-24" Grid.ColumnSpan="5" />
+        <Label x:Name="lblGamePathlbl" Grid.Column="1" Grid.Row="7" Content="Game Path:&#xA;" Foreground="White"
+            TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="75" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Margin="0,0,6,-24" />
+        <Button x:Name="btnPathSelect" Grid.Column="5" Content="..." HorizontalAlignment="Left"
+            VerticalAlignment="Top" Padding="1" Margin="169,50,0,0" Height="22" Width="35"
+            Foreground="LightGray" BorderBrush="Gray" TextBlock.FontSize="10" Click="PatchButton_PreviewMouseDown" Grid.Row="7" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

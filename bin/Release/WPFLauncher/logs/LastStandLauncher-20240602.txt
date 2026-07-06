@@ -1,0 +1,2 @@
+2024-06-02 00:12:50.575 -07:00 [INF] Initializing settings
+2024-06-02 00:16:29.160 -07:00 [INF] Initializing settings

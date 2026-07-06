@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\wpflauncher\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|solutionrelative:wpflauncher\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\wpflauncher\\optionswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|solutionrelative:wpflauncher\\optionswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3AC37CE-308B-4226-B29F-673ED0099C76}|Lister\\Lister.csproj|D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\lister\\forms\\lform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C3AC37CE-308B-4226-B29F-673ED0099C76}|Lister\\Lister.csproj|solutionrelative:lister\\forms\\lform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3AC37CE-308B-4226-B29F-673ED0099C76}|Lister\\Lister.csproj|D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\lister\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3AC37CE-308B-4226-B29F-673ED0099C76}|Lister\\Lister.csproj|solutionrelative:lister\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|d:\\code_projects\\laststand\\ls-opendaoc-launcher\\wpflauncher\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|solutionrelative:wpflauncher\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\wpflauncher\\utils\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|solutionrelative:wpflauncher\\utils\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\wpflauncher\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{35BFE442-88C0-499C-8EB1-AC7C93A4F4A1}|WPFLauncher\\WPFLauncher.csproj|solutionrelative:wpflauncher\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "WPFLauncher\\Properties\\Settings.settings",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\Properties\\Settings.settings",
+              "RelativeToolTip": "WPFLauncher\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2024-06-04T05:27:41.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\Utils\\Constants.cs",
+              "RelativeDocumentMoniker": "WPFLauncher\\Utils\\Constants.cs",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\Utils\\Constants.cs",
+              "RelativeToolTip": "WPFLauncher\\Utils\\Constants.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T07:05:31.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WPFLauncher\\MainWindow.xaml",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\MainWindow.xaml",
+              "RelativeToolTip": "WPFLauncher\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-29T02:13:47.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFLauncher\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WPFLauncher\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0CAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T19:45:30.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OptionsWindow.xaml",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\OptionsWindow.xaml",
+              "RelativeDocumentMoniker": "WPFLauncher\\OptionsWindow.xaml",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\WPFLauncher\\OptionsWindow.xaml",
+              "RelativeToolTip": "WPFLauncher\\OptionsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-03T19:45:00.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\Lister\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Lister\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\Lister\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Lister\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T17:40:01.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "lForm.cs [Design]",
+              "DocumentMoniker": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\Lister\\Forms\\lForm.cs",
+              "RelativeDocumentMoniker": "Lister\\Forms\\lForm.cs",
+              "ToolTip": "D:\\Code_Projects\\LastStand\\LS-OpenDAoC-Launcher\\Lister\\Forms\\lForm.cs [Design]",
+              "RelativeToolTip": "Lister\\Forms\\lForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T17:37:56.372Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

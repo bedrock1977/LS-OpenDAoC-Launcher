@@ -566,19 +566,19 @@ namespace WPFLauncher
             var command = Settings.Default.GameFolder + "connect.exe game1127.dll " + serverIP + " " + UsernameBox.Text + " " + PasswordBox.Password +
                           " " + quickSelection;
             log.Information("Starting with command: " + command);
-            StartAtlas(command);
+            StartGame(command);
             PlayButton.Content = "Play";
             EnableAccountCredentials(true);
         }
 
-        private static void StartAtlas(string command)
+        private static void StartGame(string command)
         {
             ProcessStartInfo ProcessInfo;
-            Process AtlasProcess;
+            Process gameProcess;
             ProcessInfo = new ProcessStartInfo("cmd.exe", "/K " + command);
             ProcessInfo.WindowStyle = ProcessWindowStyle.Hidden;
             ProcessInfo.UseShellExecute = true;
-            AtlasProcess = Process.Start(ProcessInfo);
+            gameProcess = Process.Start(ProcessInfo);
 
             if (!Settings.Default.KeepOpen) Environment.Exit(0);
         }

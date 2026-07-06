@@ -11,7 +11,7 @@ namespace AtlasPatcher.Lister
     {
         string[] Files;
 
-        private string PatchFilesURL = "https://patch.atlasfreeshard.com/atlaspack/";
+        private string PatchFilesURL = "https://patch.laststand.net/";
 
         public lForm()
         {

@@ -14,12 +14,12 @@ namespace WPFLauncher
         {
             // check that there is only one instance of the control panel running...
             bool createdNew;
-            _instanceMutex = new Mutex(true, "AtlasLauncher" , out createdNew);
+            _instanceMutex = new Mutex(true, "LastStandLauncher", out createdNew);
             if (!createdNew)
             {
                 _instanceMutex = null;
                 
-                MessageBox.Show("Atlas Launcher is already running!", "", MessageBoxButton.OK);
+                MessageBox.Show("Last Stand Launcher is already running!", "", MessageBoxButton.OK);
                 Application.Current.Shutdown();
                 return;
             }

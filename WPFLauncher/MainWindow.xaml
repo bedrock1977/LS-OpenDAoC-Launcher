@@ -108,7 +108,7 @@
             TextBlock.FontSize="12" TextBlock.FontWeight="Bold" Width="75" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Margin="0,0,6,-24" />
         <Button x:Name="btnPathSelect" Grid.Column="5" Content="..." HorizontalAlignment="Left"
             VerticalAlignment="Top" Padding="1" Margin="169,50,0,0" Height="22" Width="35"
-            Foreground="LightGray" BorderBrush="Gray" TextBlock.FontSize="10" Click="PatchButton_PreviewMouseDown" Grid.Row="7" >
+            Foreground="LightGray" BorderBrush="Gray" TextBlock.FontSize="10" Click="BtnPathSelect_Click" Grid.Row="7" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

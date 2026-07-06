@@ -18,6 +18,7 @@ using Serilog;
 using System.Threading;
 using System.Text;
 using System.Net.Http.Headers;
+using WinForms = System.Windows.Forms;
 
 namespace WPFLauncher
 {
@@ -85,10 +86,8 @@ namespace WPFLauncher
             if (Settings.Default.Username != "") UsernameBox.Text = Settings.Default.Username;
             if (Settings.Default.Password != "") PasswordBox.Password = Settings.Default.Password;
             if (Settings.Default.QuickCharacter != "") QuickloginCombo.Text = Settings.Default.QuickCharacter;
-            if (Settings.Default.GameFolder != "") lblGamePath.Content = Settings.Default.GameFolder;
-
-            // Added lblGamePath details
-            //lblGamePath.Content = Constants.UserPath;
+            if (Settings.Default.GameFolder != "")
+                lblGamePath.Content = GetGameInstallPath(Settings.Default.GameFolder);
 
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -563,7 +562,7 @@ namespace WPFLauncher
 
             serverIP = Settings.Default.PTR ? Constants.PtrIP : Constants.LiveIP;
 
-            var command = Settings.Default.GameFolder + "connect.exe game1127.dll " + serverIP + " " + UsernameBox.Text + " " + PasswordBox.Password +
+            var command = GetGameInstallPath(Settings.Default.GameFolder) + "connect.exe game1127.dll " + serverIP + " " + UsernameBox.Text + " " + PasswordBox.Password +
                           " " + quickSelection;
             log.Information("Starting with command: " + command);
             StartGame(command);
@@ -583,11 +582,68 @@ namespace WPFLauncher
             if (!Settings.Default.KeepOpen) Environment.Exit(0);
         }
 
+        private void BtnPathSelect_Click(object sender, RoutedEventArgs e)
+        {
+            var currentPath = GetGameInstallPath(Settings.Default.GameFolder);
+            using (var dialog = new WinForms.FolderBrowserDialog())
+            {
+                dialog.Description = "Select your Last Stand game installation folder";
+                dialog.UseDescriptionForTitle = true;
+                if (Directory.Exists(currentPath))
+                    dialog.SelectedPath = currentPath;
+
+                if (dialog.ShowDialog() != WinForms.DialogResult.OK)
+                    return;
+
+                var selectedPath = dialog.SelectedPath;
+                if (!File.Exists(Path.Combine(selectedPath, "connect.exe")))
+                {
+                    MessageBox.Show(
+                        "connect.exe was not found in the selected folder. Please choose your game installation directory.",
+                        "Last Stand Launcher",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+                Settings.Default.GameFolder = NormalizeGameInstallPath(selectedPath);
+                Settings.Default.Save();
+                lblGamePath.Content = Settings.Default.GameFolder;
+                GetQuickCharacters();
+            }
+        }
+
+        private static string NormalizeGameInstallPath(string path)
+        {
+            var trimmed = path.TrimEnd('\\', '/');
+            return trimmed + Path.DirectorySeparatorChar;
+        }
+
+        private static string GetGameInstallPath(string gameFolderSetting)
+        {
+            if (string.IsNullOrWhiteSpace(gameFolderSetting))
+                return "";
+
+            if (gameFolderSetting.EndsWith("user.dat", StringComparison.OrdinalIgnoreCase))
+                return NormalizeGameInstallPath(Path.GetDirectoryName(gameFolderSetting));
+
+            return NormalizeGameInstallPath(gameFolderSetting);
+        }
+
+        private static string GetUserDatPath(string gameFolderSetting)
+        {
+            if (string.IsNullOrWhiteSpace(gameFolderSetting))
+                return "";
+
+            if (gameFolderSetting.EndsWith("user.dat", StringComparison.OrdinalIgnoreCase))
+                return gameFolderSetting;
+
+            return Path.Combine(GetGameInstallPath(gameFolderSetting), "user.dat");
+        }
+
         private void GetQuickCharacters()
         {
-            // var path = Environment.ExpandEnvironmentVariables(Constants.AppData) + Constants.UserPath;
-            //var path = Constants.UserPath;
-            var path = Settings.Default.GameFolder;
+            var path = GetUserDatPath(Settings.Default.GameFolder);
             if (!File.Exists(path)) return;
 
             var userDat = File.ReadAllLines(path);
